@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+    <title> Mi primer página </title>
+    <style>
+        body {
+            background-color: wheat;
+            border: 4px;
+            border: green;
+        }
+
+        .ancho-fijo{
+            width: 100px;
+        }
+
+        edicion {
+            background-color: transparent;
+            border-color: black;
+            padding: 5px;
+        }
+        li {
+            color: black;
+        }
+    </style>
+    <script>
+        function guardar(){
+            console.log('¡Acciones a guardar!');
+            consola = document.getElementById("consola");
+            nombre = document.getElementById("nombre").value;
+
+            consola.innerHTML = consola.innerHTML + '<strong>' + nombre;
+        }
+
+        ds = {
+            datos: [
+                {id: 0, nombre: 'Nombre 1'},
+                {id: 1, nombre: 'Nombre 2'},
+            ],
+            agregar(item) {
+                this.datos.push(item);
+            },
+            imprimir() {
+                this.datos.forEach(item => {
+                    console.log(item.id + ' ' + item.nombre);
+                });
+            },
+            agregarFila(tbTabla, item){
+                tbTabla.insertRow().innerHTML = '<tr><td>${item.id}</td><td>${item.nombre}</td></tr>';
+            }
+        }
+        function agregarRegistro(){
+            item = {id: document.getElementById("identificador").value,
+            nombre: document.getElementById("nombre").value};
+            ds.agregar(item);
+            ds.agregarFila(document.getElementById("tbTabla"), item);
+        }
+        function imprimirConsola(){
+            ds.imprimir();
+        }
+    </script>
+    <head>
+        <body>
+            <nav>
+                <ul>
+                    <li><a href="#">Personas</a></li>
+                    <li><a href="#">Listados</a></li>
+                    <li><a href="#">Opción 3</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <form>
+                    <input type="text" id="input1" name="input1"/>
+                    <select id="select1" name="select1" >
+                        <option value="1">Opción 1</option>
+                    </select>
+                </form>
+            </div>
+
+            <div>
+                <form>
+                    <input type="text" id="identificador" value=" " class="ancho-fijo"/>
+                    <input type="text" id="nombre" value=" "/>
+                    <select id="genero">
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                    <button type="button" onclick="guardar()">Guardar</button>
+                </form>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Identificador</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Nombre 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="consola">
+                <button type="button" onclick="imprimirConsola()">Imprimir consola</button>
+            </div>
+        </body>
+    </head>
+</html>
