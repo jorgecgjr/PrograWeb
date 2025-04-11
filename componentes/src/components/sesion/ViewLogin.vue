@@ -53,7 +53,7 @@
       },
       methods: {
         validar () {
-          this.$router.push('/correspondencia')
+          this.$router.push('/navbar')
          },
         limpiarControles () {
           this.alerta.mensaje = ''

@@ -22,7 +22,13 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: ViewLogin
+    },
+    {
+      path: '/navbar',
+      name: 'navbar',
+      component: () => import('../components/main/comp.vue'),
     }
+
   ],
 })
 
