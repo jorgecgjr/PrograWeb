@@ -3,7 +3,7 @@
     <div class="card-body">
       <div class="text-center">
         <h4 class="card-title" title="Plataforma para monitoreo de Sistemas de Bombeo">Sesión</h4>
-        <h5 class="card-title">Nombre plataforma</h5>
+        <h5 class="card-title">Control de Bomba de Agua</h5>
         <hr />
       </div>
       <div class="row p-1"> 
@@ -76,7 +76,7 @@
       color: var(--gray-900);
       font-weight: 500;
       line-height: 100%;
-      /*letter-spacing: -0.125rem;*/
+      letter-spacing: -0.125rem;
       margin: 0;
       font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -103,11 +103,18 @@
       max-width: 400px;
       min-width: 300px;
       width: 100%;
-      /*background:  url('@/assets/img/background.png') repeat-x scroll;*/
+      background:  url('@/assets/img/background.png') repeat-x scroll;
     }
     
     .login-full-width {
       width: 100%;
     }
+
+    /*.card-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }*/
     </style>
     
