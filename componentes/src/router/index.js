@@ -23,6 +23,12 @@ const router = createRouter({
       name: 'login',
       component: ViewLogin
     },
+
+    {
+      path: '/dispositivos',
+      name: 'dispositivos',
+      component: () => import('../views/ViewDispositivos.vue'),
+    },
     {
       path: '/navbar',
       name: 'navbar',
