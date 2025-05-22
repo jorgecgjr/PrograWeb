@@ -1,7 +1,7 @@
 <template>
 <div class="col">
     <div class="card">
-        <img src="/images/fcbarcelona.png" id ="logo" class="card-img-top" alt="...">
+        <!--img src="/images/fcbarcelona.png" id ="logo" class="card-img-top" alt="..."-->
         <div class="card-body">
             <h5 class="card-title">{{identifica.nombre}}</h5>
             <p class="card-text">{{ identifica.ubicacion }}, {{ identifica.coordenadas }}.</p>

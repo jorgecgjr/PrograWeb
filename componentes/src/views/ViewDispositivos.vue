@@ -1,5 +1,5 @@
 <template>
-<div class="card">
+<div class="container row justify-content-center">
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
     <div class="btn-group me-2" role="group" aria-label="Second group">
         <button type="button" class="btn btn-secondary" @click="refresh">refresh</button>
@@ -7,136 +7,29 @@
         <button type="button" class="btn btn-secondary" @click="stop">Detener</button>
     </div>
     </div>
-    <div class="card-body">
+    <div class="row justify-content-center">
         <Dispositivo  v-for="(item,index) in dispositivos" :key="index" :identifica="item.identifica" :opera="item.opera"></Dispositivo>
     </div>
 </div>
 </template>
 <script>
-    //import DSDispositivos from '@/servicios/dispositivos'
+    import DSDispositivos from '@/servicios/dsDispositivos'
     import Dispositivo from '@/components/monitor/Dispositivo.vue'
-    
+
     export default {
-        name: 'ViewDispositivo',
+        name: 'ViewDispositivos',
         components: {
             Dispositivo
         },
         data() {
             return {
                 nIntervId: null,
-                dispositivos: [
-                    {
-                        identifica: {
-                            identificador: 1,
-                            nombre: 'Represa Uno',
-                            ubicacion: 'En la compuerta de la Represa Uno',
-                            coordenadas: '19.7060° N, 101.1950° W',
-                            idestatus: 1,
-                            estatus: 'Operacion Normal',
-                            potencia:  { nominal: 7.400, minimo: 6.200, maximo: 8.600, um: 'KW' },
-                            voltaje: { nominal: 240, minimo: 230, maximo: 250, um: 'Volts' },
-                            corriente: { nominal: 30, minimo: 25, maximo: 35, um: 'Amperes' },
-                            caudal: { nominal: 1, minimo: 0.10, maximo: 1.20, um: 'm3/minuto' },
-                            fechaRegistro: new Date().toUTCString()
-                        },
-                        opera: {
-                            voltaje: 240,
-                            corriente: 30,
-                            caudal: 1,
-                            estatus: 1    // {1->Normal, 2->Advertencia, 3->Error}
-                        },
-                        estado: 1   // {1->Encendido, 2->Apagado, 3->Bloqueado}
-                    },
-                    {
-                        identifica: {
-                            identificador: 2,
-                            nombre: 'Represa dos',
-                            ubicacion: 'En la compuerta de la Represa dos',
-                            coordenadas: '19.7060° N, 101.1950° W',
-                            idestatus: 1,
-                            estatus: 'Operacion Normal',
-                            potencia:  { nominal: 7.400, minimo: 6.200, maximo: 8.600, um: 'KW' },
-                            voltaje: { nominal: 240, minimo: 230, maximo: 250, um: 'Volts' },
-                            corriente: { nominal: 30, minimo: 25, maximo: 35, um: 'Amperes' },
-                            caudal: { nominal: 1, minimo: 0.10, maximo: 1.20, um: 'm3/minuto' },
-                            fechaRegistro: new Date().toUTCString()
-                        },
-                        opera: {
-                            voltaje: 240,
-                            corriente: 30,
-                            caudal: 1,
-                            estatus: 1    // {1->Normal, 2->Advertencia, 3->Error}
-                        },
-                        estado: 1   // {1->Encendido, 2->Apagado, 3->Bloqueado}
-                    },
-                    {
-                        identifica: {
-                            identificador: 3,
-                            nombre: 'Represa tres',
-                            ubicacion: 'En la compuerta de la Represa tres',
-                            coordenadas: '19.7060° N, 101.1950° W',
-                            idestatus: 1,
-                            estatus: 'Operacion Normal',
-                            potencia:  { nominal: 7.400, minimo: 6.200, maximo: 8.600, um: 'KW' },
-                            voltaje: { nominal: 240, minimo: 230, maximo: 250, um: 'Volts' },
-                            corriente: { nominal: 30, minimo: 25, maximo: 35, um: 'Amperes' },
-                            caudal: { nominal: 1, minimo: 0.10, maximo: 1.20, um: 'm3/minuto' },
-                            fechaRegistro: new Date().toUTCString()
-                        },
-                        opera: {
-                            voltaje: 240,
-                            corriente: 30,
-                            caudal: 1,
-                            estatus: 1    // {1->Normal, 2->Advertencia, 3->Error}
-                        },
-                        estado: 1   // {1->Encendido, 2->Apagado, 3->Bloqueado}
-                    },
-                    {
-                        identifica: {
-                            identificador: 4,
-                            nombre: 'Represa cuatro',
-                            ubicacion: 'En la compuerta de la Represa Cuatro',
-                            coordenadas: '19.7060° N, 101.1950° W',
-                            idestatus: 1,
-                            estatus: 'Operacion Normal',
-                            potencia:  { nominal: 7.400, minimo: 6.200, maximo: 8.600, um: 'KW' },
-                            voltaje: { nominal: 240, minimo: 230, maximo: 250, um: 'Volts' },
-                            corriente: { nominal: 30, minimo: 25, maximo: 35, um: 'Amperes' },
-                            caudal: { nominal: 1, minimo: 0.10, maximo: 1.20, um: 'm3/minuto' },
-                            fechaRegistro: new Date().toUTCString()
-                        },
-                        opera: {
-                            voltaje: 240,
-                            corriente: 30,
-                            caudal: 1,
-                            estatus: 1    // {1->Normal, 2->Advertencia, 3->Error}
-                        },
-                        estado: 1   // {1->Encendido, 2->Apagado, 3->Bloqueado}
-                    },
-                    {
-                        identifica: {
-                            identificador: 5,
-                            nombre: 'Represa Cinco',
-                            ubicacion: 'En la compuerta de la Represa Cinco',
-                            coordenadas: '19.7060° N, 101.1950° W',
-                            idestatus: 1,
-                            estatus: 'Operacion Normal',
-                            potencia:  { nominal: 7.400, minimo: 6.200, maximo: 8.600, um: 'KW' },
-                            voltaje: { nominal: 240, minimo: 230, maximo: 250, um: 'Volts' },
-                            corriente: { nominal: 30, minimo: 25, maximo: 35, um: 'Amperes' },
-                            caudal: { nominal: 1, minimo: 0.10, maximo: 1.20, um: 'm3/minuto' },
-                            fechaRegistro: new Date().toUTCString()
-                        },
-                        opera: {
-                            voltaje: 240,
-                            corriente: 30,
-                            caudal: 1,
-                            estatus: 1    // {1->Normal, 2->Advertencia, 3->Error}
-                        },
-                        estado: 1   // {1->Encendido, 2->Apagado, 3->Bloqueado}
-                    }
-                ]
             }
+        },
+        computed: {
+          dispositivos() {
+            return this.$store.state.dispositivos
+          }
         },
         methods:{
             refresh() {
@@ -174,8 +67,10 @@
             }
         },
         created () {
-            //DSDispositivos.init()
-            //this.objDispositivos = DSDispositivos.getListaDataStore()
+          //this.$store.
+          this.$store.commit('setDispositivos', DSDispositivos.getListaDataStore())
+          //DSDispositivos.init()
+          //this.Dispositivos = DSDispositivos.getListaDataStore()
         }
     }
     </script>

@@ -7,7 +7,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <header v-if="route.name !== 'login'">
+  <header v-if="route.name === 'home'">
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
