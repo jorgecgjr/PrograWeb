@@ -1,8 +1,8 @@
 <template>
-<div class="container row justify-content-center">
+<div class="containerDS row justify-content-center">
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group me-2" role="group" aria-label="Second group">
-        <button type="button" class="btn btn-secondary" @click="refresh">refresh</button>
+    <div class="btn-group col text-center" role="group" aria-label="Second group">
+        <button type="button" class="btn btn-secondary" @click="refresh">Recargar</button>
         <button type="button" class="btn btn-secondary" @click="start">Iniciar</button>
         <button type="button" class="btn btn-secondary" @click="stop">Detener</button>
     </div>

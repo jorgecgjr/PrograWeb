@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/ccs2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #a9f2ff;
+}
+
+.container {
+    max-width: 440px;
+    padding: 0 20px;
+    margin: 170px auto; 
+}
+
+.containerDS {
+    max-width: 750px;
+    padding: 0 30px;
+    margin: 170px auto; 
+}
+
+.wrapper{
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.wrapper .title{
+    line-height: 90px;
+    background: #00afce;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.wrapper form{
+    padding: 30px 20px 25px 20px;
+}
+
+.wrapper form .row{
+    height: 45px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.wrapper form .row input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+form .row input:focus {
+    border-color: #00afce;
+    box-shadow: inset 0px 0px 2px 2px rgba(26, 188, 156, 0.25);
+}
+
+.wrapper form .row i {
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+    background: #00afce;
+    border: 1px solid #00afce;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper form .pass {
+    margin: -8px 0 20px 0;
+}
+
+.wrapper form .pass a {
+    color: #00afce;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+form .pass a:hover {
+    text-decoration: underline;
+}
+
+
+.wrapper form .button input {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 0px;
+    background: #00afce;
+    border: 1px solid #00afce;
+    cursor: pointer;
+}
+
+.wrapper form .signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.wrapper form .signup-link a {
+    color: #00afce;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+form .signup-link a:hover {
+    text-decoration: underline;
+}
+
